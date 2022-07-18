@@ -9,7 +9,16 @@ public class Main {
     }
 
     public static ArrayList<Integer> getNums(int[] nums) {
-        // your code here
-        return null;
+
+        TreeSet<Integer> numbers = new TreeSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            //if (nums[i] > 25) <- this can be used in lieu of line 18
+            numbers.add(nums[i]);
+        }
+        numbers = (TreeSet<Integer>)numbers.tailSet(25);
+        ArrayList<Integer> filteredNumbers = new ArrayList<>(numbers);
+        return filteredNumbers; // [34, 36, 37, 45, 56]
+
     }
+
 }
